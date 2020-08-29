@@ -15,7 +15,7 @@ def cadastro_pessoa(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return home(request)
+            return cadastro_pessoa(request)
 
         else:
             print(form.errors)
