@@ -23,6 +23,7 @@ from cadastro.base.models import User, Pessoa
 csrf_protect_m = method_decorator(csrf_protect)
 sensitive_post_parameters_m = method_decorator(sensitive_post_parameters())
 
+
 @admin.register(Pessoa)
 class PessoaAdmin(OrderedModelAdmin):
     list_display = ('nome', 'sobrenome', 'idade', 'data_de_nascimento', 'email', 'apelido', 'obs')

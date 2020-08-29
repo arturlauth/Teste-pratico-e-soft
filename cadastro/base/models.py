@@ -91,6 +91,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
 
+
 class Pessoa(OrderedModel):
     nome = models.CharField(max_length=100)
     sobrenome = models.CharField(max_length=100)
@@ -103,9 +104,6 @@ class Pessoa(OrderedModel):
     class Meta(OrderedModel.Meta):
         verbose_name_plural = 'pessoas'
         ordering = ('nome',)
-
-    class Meta(OrderedModel.Meta):
-        pass
 
     def __str__(self):
         return self.nome
