@@ -8,6 +8,9 @@ flake8 = "*"
 
 [packages]
 django = "*"
+django-bootstrap-datepicker-plus = "*"
+django-bootstrap4 = "*"
+django-crispy-forms = "*"
 
 [requires]
 python_version = "3.8"
