@@ -25,5 +25,6 @@ def cadastrar_pessoa(request):
 
     return render(request, 'base/cadastrar_pessoa.html', {'form': form})
 
+
 def sucess(request):
     return render(request, 'base/sucess.html')
