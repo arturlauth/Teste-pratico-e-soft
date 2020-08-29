@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from ordered_model.models import OrderedModel
 
 
 class UserManager(BaseUserManager):
@@ -89,3 +90,22 @@ class User(AbstractBaseUser, PermissionsMixin):
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+class Pessoa(OrderedModel):
+    nome = models.CharField(max_length=100)
+    sobrenome = models.CharField(max_length=100)
+    idade = models.IntegerField(default=0)
+    data_de_nascimento = models.DateField()
+    email = models.EmailField()
+    apelido = models.CharField(max_length=100, blank=True)
+    obs = models.TextField(max_length=400, blank=True)
+
+    class Meta(OrderedModel.Meta):
+        verbose_name_plural = 'pessoas'
+        ordering = ('nome',)
+
+    class Meta(OrderedModel.Meta):
+        pass
+
+    def __str__(self):
+        return self.nome

@@ -19,7 +19,7 @@
 
 <h1>Cadastre-se:</h1>
 <div>
-    <form id="cadastro_form" method="post" action="/cadastro_pessoa/">
+    <form id="cadastro_form" method="POST" action="/cadastrar_pessoa/">
         {% csrf_token %}
         {{ form }}
         <input type="submit" name="submit" value="Criar Pessoa"/>
