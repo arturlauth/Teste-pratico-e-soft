@@ -6,7 +6,7 @@ Projeto em Django - Resolução do teste prático para processo seletivo e-soft 
 # Modo de Usar:
 
 Basta baixar o repositório, usar o pipenv update para instalação das dependências necessárias para funcionamento do sistema.
-Feito isso rodar o comando mng runserver no terminal e abrir em seu navegador o endereço que aparecer na tela.
+Feito isso rodar o comando mng runserver no terminal e abrir em seu navegador o endereço que aparecer na tela. Padrão é : http://127.0.0.1:8000/
 
 # Página cadastrar: 
 
