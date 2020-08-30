@@ -15,5 +15,3 @@ def get_random_name():
 
 def listar_pessoas_ordenado() -> List[Pessoa]:
     return list(Pessoa.objects.order_by('nome').all())
-
-
