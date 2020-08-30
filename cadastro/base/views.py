@@ -6,7 +6,7 @@ from cadastro.base.forms import CadastroForm
 
 def listar_pessoa(request):
     pessoas = facade.listar_pessoas_ordenado()
-    return render(request, 'base/listar_pessoa.html', context={'pessoas': pessoas})
+    return render(request, 'sistema/listar_pessoa.html', context={'pessoas': pessoas})
 
 
 def cadastrar_pessoa(request):
@@ -22,13 +22,9 @@ def cadastrar_pessoa(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return sucess(request)
+            return listar_pessoa(request)
 
         else:
             print(form.errors)
 
-    return render(request, 'base/cadastrar_pessoa.html', {'form': form})
-
-
-def base(request):
-    return render(request, 'base/base.html')
+    return render(request, 'sistema/cadastrar_pessoa.html', {'form': form})
