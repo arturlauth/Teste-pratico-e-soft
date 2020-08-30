@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% block title_block %} Lista {% endblock %}
+
+{% block body_block %}
+
+{% if pessoas %}
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Sobrenome</th>
+        <th scope="col">E-mail</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for pessoa in pessoas %}
+
+    <tr>
+        <th scope="row">1</th>
+        <td>{{ pessoa.nome }}</td>
+        <td>{{ pessoa.sobrenome }}</td>
+        <td>{{ pessoa.email }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<h1> Nenhuma pessoa cadastrada.</h1>
+{% endif %}
+{% endblock %}
