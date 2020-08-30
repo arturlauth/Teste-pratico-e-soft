@@ -26,6 +26,7 @@ sensitive_post_parameters_m = method_decorator(sensitive_post_parameters())
 
 @admin.register(Pessoa)
 class PessoaAdmin(OrderedModelAdmin):
+    ordering = ('nome',)
     list_display = ('nome', 'sobrenome', 'idade', 'data_de_nascimento', 'email', 'apelido', 'obs')
 
 
