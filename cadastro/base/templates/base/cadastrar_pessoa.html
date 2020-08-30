@@ -1,23 +1,24 @@
 {% extends 'base/base.html' %}
 
+{% load crispy_forms_tags %}
 {% load bootstrap4 %}       {# import bootstrap4/bootstrap3 #}
 {% bootstrap_css %}         {# Embed Bootstrap CSS #}
 {% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
-{{ form.media }}            {# Adds date-picker required JS and CSS #}
+
 
 {% block title_block %} Cadastro de pessoas {% endblock %}
 
 
 {% block body_block %}
-
+{{ form.media }}            {# Adds date-picker required JS and CSS #}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
-            <h1 class="mt-2">Django People</h1>
+            <h1 class="mt-2">Cadastro de Pessoas</h1>
             <hr class="mt-0 mb-4">
             <form id="cadastro_form" method="POST" action="/cadastrar_pessoa/">
                 {% csrf_token %}
-                {{ form }}
+                {{ form|crispy }}
                 <input type="submit" name="submit" value="Criar Pessoa"/>
             </form>
         </div>
