@@ -4,6 +4,11 @@ from cadastro.base import facade
 from cadastro.base.forms import CadastroForm
 
 
+def listar_pessoa(request):
+    pessoas = facade.listar_pessoas_ordenado()
+    return render(request, 'base/listar_pessoa.html', context={'pessoas': pessoas})
+
+
 def cadastrar_pessoa(request):
     initial_dict = facade.get_random_name()
     form = CadastroForm(initial=initial_dict)
@@ -25,5 +30,5 @@ def cadastrar_pessoa(request):
     return render(request, 'base/cadastrar_pessoa.html', {'form': form})
 
 
-def sucess(request):
-    return render(request, 'base/sucess.html')
+def base(request):
+    return render(request, 'base/base.html')
